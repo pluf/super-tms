@@ -1,0 +1,43 @@
+{
+	"name" : "pluf/super-tms",
+	"description" : "Managing TMS entities",
+	"type" : "library",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Mostafa Barmshory",
+			"email" : "mostafa.barmshory@dpq.co.ir",
+			"homepage" : "http://dpq.co.ir",
+			"role" : "developer"
+		}, {
+			"name" : "Mohammad Hadi Mansouri",
+			"email" : "mohammad.hadi.mansouri@dpq.co.ir",
+			"homepage" : "http://dpq.co.ir",
+			"role" : "developer"
+		}
+	],
+	"minimum-stability" : "stable",
+	"require" : {
+		"pluf/tms" : "5.11.x",
+		"pluf/user" : "5.11.x"
+	},
+	"require-dev" : {
+		"pluf/test" : "5.11.x"
+	},
+	"include-path" : [
+		"src/"
+	],
+	"homepage" : "https://github.com/pluf/super-tms",
+	"support" : {
+		"email" : "info@pluf.ir",
+		"issues" : "https://github.com/pluf/super-tms/issues",
+		"forum" : "https://github.com/pluf/super-tms",
+		"wiki" : "https://github.com/pluf/super-tms/wiki",
+		"source" : "https://github.com/pluf/super-tms"
+	},
+	"keywords" : [
+		"pluf",
+		"php",
+		"cache",
+		"pluf-module"
+	]
+}
