@@ -35,6 +35,7 @@ class SuperTms_Project extends TMS_Project
     {
         parent::init();
         $this->_a['multitenant'] = false;
+        Pluf::loadFunction('SuperTms_Shortcuts_GetTenantFeildProperties');
         $tenatFeild = SuperTms_Shortcuts_GetTenantFeildProperties();
         $this->_a['cols'] = array_merge($this->_a['cols'], $tenatFeild);
     }
