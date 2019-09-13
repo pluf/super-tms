@@ -19,22 +19,23 @@ Pluf::loadFunction('SuperTenant_Shortcuts_GetTenantFeildProperties');
  */
 
 /**
- * Comment data model
- * 
- * @author maso<mostafa.barmshory@dpq.co.ir>
+ * TestRun data model
  *
+ * @author hadi
+ *        
  */
-class SuperTenant_Comment extends Tenant_Comment
+class SuperTms_TestRun extends TMS_TestRun
 {
 
     /**
-     * @see SuperTenant_Comment::init()
+     *
+     * @see TMS_TestRun::init()
      */
     function init()
     {
         parent::init();
         $this->_a['multitenant'] = false;
-        $tenatFeild = SuperTenant_Shortcuts_GetTenantFeildProperties();
+        $tenatFeild = SuperTms_Shortcuts_GetTenantFeildProperties();
         $this->_a['cols'] = array_merge($this->_a['cols'], $tenatFeild);
     }
 }

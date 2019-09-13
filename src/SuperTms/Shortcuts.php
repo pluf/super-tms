@@ -1,20 +1,6 @@
 <?php
 
-function SuperTenant_Shortcuts_GetMainTenant ()
-{
-    $subdomain = Pluf::f('tenant_default', null);
-    if($subdomain === null){
-        throw new Pluf_Exception_DoesNotExist('tenant_default is not set!');
-    }
-    $tenant = Pluf_Tenant::bySubDomain($subdomain);
-    if ($tenant == null || $tenant->id <= 0) {
-        throw new Pluf_Exception_DoesNotExist(
-                "Tenant not found (subdomain:" . $subdomain . ")");
-    }
-    return $tenant;
-}
-
-function SuperTenant_Shortcuts_NormalizeItemPerPage ($request)
+function SuperTms_Shortcuts_NormalizeItemPerPage ($request)
 {
     $count = array_key_exists('_px_c', $request->REQUEST) ? intval($request->REQUEST['_px_c']) : 30;
     if($count > 30)
@@ -22,7 +8,7 @@ function SuperTenant_Shortcuts_NormalizeItemPerPage ($request)
     return $count;
 }
 
-function SuperTenant_Shortcuts_GetTenantFeildProperties(){
+function SuperTms_Shortcuts_GetTenantFeildProperties(){
     return array(
         'tenant' => array(
             'type' => 'Pluf_DB_Field_Foreignkey',
@@ -42,7 +28,7 @@ function SuperTenant_Shortcuts_GetTenantFeildProperties(){
  * @param Pluf_Model $model a model with tenant feild
  * @return Pluf_HTTP_Error404|true true if given model is blong to tenant else throw exception
  */
-function SuperTenant_Shortcuts_CheckTenant($request, $match, $model){
+function SuperTms_Shortcuts_CheckTenant($request, $match, $model){
     $tenant = null;
     if(isset($request->REQUEST['tenant'])){
         $tenant = Pluf_Shortcuts_GetObjectOr404('Pluf_Tenant', $request->REQUEST['tenant']);

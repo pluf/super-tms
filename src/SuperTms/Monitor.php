@@ -17,27 +17,38 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-class SuperTenant_Monitor
+class SuperTms_Monitor
 {
 
-    public static function membersCount ()
+    public static function testsCount ()
     {
-        $sm = new SuperTenant_Member();
+        $model = new SuperTms_Test();
         $param = array(
             'count' => true
         );
-        $res = $sm->getList($param);
+        $res = $model->getList($param);
         // Check permission
         return $res[0]['nb_items'] + 0;
     }
 
-    public static function tenantsCount ()
+    public static function testRunsCount ()
     {
-        $tenant = new Pluf_Tenant();
+        $model = new SuperTms_TestRun();
         $param = array(
             'count' => true
         );
-        $res = $tenant->getList($param);
+        $res = $model->getList($param);
+        // Check permission
+        return $res[0]['nb_items'] + 0;
+    }
+    
+    public static function projectsCount ()
+    {
+        $model = new SuperTms_Project();
+        $param = array(
+            'count' => true
+        );
+        $res = $model->getList($param);
         // Check permission
         return $res[0]['nb_items'] + 0;
     }

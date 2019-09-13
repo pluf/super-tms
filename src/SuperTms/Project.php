@@ -19,23 +19,24 @@ Pluf::loadFunction('SuperTenant_Shortcuts_GetTenantFeildProperties');
  */
 
 /**
- * Data model of Invoice
  *
- * @author maso<mostafa.barmshory@dpq.co.ir>
+ * @author hadi <mohammad.hadi.mansouri@dpq.co.ir>
  *        
  */
-class SuperTenant_Invoice extends Tenant_Invoice
+class SuperTms_Project extends TMS_Project
 {
 
     /**
+     * @brief مدل داده‌ای را بارگذاری می‌کند.
      *
-     * @see SuperTenant_Ticket::init()
+     * @see TMS_Project::init()
      */
     function init()
     {
         parent::init();
         $this->_a['multitenant'] = false;
-        $tenatFeild = SuperTenant_Shortcuts_GetTenantFeildProperties();
+        $tenatFeild = SuperTms_Shortcuts_GetTenantFeildProperties();
         $this->_a['cols'] = array_merge($this->_a['cols'], $tenatFeild);
     }
+
 }

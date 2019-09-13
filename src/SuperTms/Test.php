@@ -19,23 +19,23 @@ Pluf::loadFunction('SuperTenant_Shortcuts_GetTenantFeildProperties');
  */
 
 /**
- * Ticket data model
+ * Test data model
  *
- * @author maso
+ * @author hadi
  *        
  */
-class SuperTenant_Ticket extends Tenant_Ticket
+class SuperTms_Test extends TMS_Test
 {
 
     /**
      *
-     * @see Tenant_Ticket::init()
+     * @see TMS_Test::init()
      */
     function init()
     {
         parent::init();
         $this->_a['multitenant'] = false;
-        $tenatFeild = SuperTenant_Shortcuts_GetTenantFeildProperties();
+        $tenatFeild = SuperTms_Shortcuts_GetTenantFeildProperties();
         $this->_a['cols'] = array_merge($this->_a['cols'], $tenatFeild);
     }
 }

@@ -1,29 +1,37 @@
 {
-	"name": "SuperTenant",
-	"version": "4.0.0",
-	"title": "Tenant management system",
+	"name": "SuperTms",
+	"version": "5.11.2",
+	"title": "Managing TMS Entities0",
 	"model": [],
 	"init": {
 		"Monitor_Tag": [
 			{
-				"name": "supertenant",
-				"description": "Tag for monitors on SuperTenant metrics"
+				"name": "supertms",
+				"description": "Tag for monitors on SuperTms metrics"
 			}
 		],
 		"Monitor_Metric": [
 			{
-				"name": "supertenant.tenant.count",
-				"title": "Number of tenants",
-				"description": "Defines number of tenants created on the server.",
-				"function": "SuperTenant_Monitor::tenantsCount",
+				"name": "supertms.project.count",
+				"title": "Number of projects",
+				"description": "Defines number of tms-projects created on the server.",
+				"function": "SuperTms_Monitor::projectsCount",
 				"cacheable": true,
 				"interval": 60
 			},
 			{
-				"name": "supertenant.member.count",
-				"title": "Number of members",
-				"description": "Defines total number of members existed on the all tenants created on the server.",
-				"function": "SuperTenant_Monitor::membersCount",
+				"name": "supertms.test.count",
+				"title": "Number of tests",
+				"description": "Defines number of tms-tests created on the server.",
+				"function": "SuperTms_Monitor::testsCount",
+				"cacheable": true,
+				"interval": 60
+			},
+			{
+				"name": "supertms.test_run.count",
+				"title": "Number of test-runs",
+				"description": "Defines total number of test-runs scheduled to execute on the all tenants created on the server.",
+				"function": "SuperTms_Monitor::testRunsCount",
 				"cacheable": true,
 				"interval": 60
 			}
@@ -32,12 +40,16 @@
 	"init_assoc": {
 		"Monitor_Tag|Monitor_Metric": [
 			{
-				"from": "name='supertenant'",
-				"to": "name='supertenant.tenant.count'"
+				"from": "name='supertms'",
+				"to": "name='supertms.project.count'"
 			},
 			{
-				"from": "name='supertenant'",
-				"to": "name='supertenant.member.count'"
+				"from": "name='supertms'",
+				"to": "name='supertms.test.count'"
+			},
+			{
+				"from": "name='supertms'",
+				"to": "name='supertms.test_run.count'"
 			}
 		]
 	}
