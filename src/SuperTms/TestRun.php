@@ -35,6 +35,7 @@ class SuperTms_TestRun extends TMS_TestRun
     {
         parent::init();
         $this->_a['multitenant'] = false;
+        Pluf::loadFunction('SuperTms_Shortcuts_GetTenantFeildProperties');
         $tenatFeild = SuperTms_Shortcuts_GetTenantFeildProperties();
         $this->_a['cols'] = array_merge($this->_a['cols'], $tenatFeild);
     }
