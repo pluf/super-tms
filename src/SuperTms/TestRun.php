@@ -1,5 +1,5 @@
 <?php
-Pluf::loadFunction('SuperTenant_Shortcuts_GetTenantFeildProperties');
+
 /*
  * This file is part of Pluf Framework, a simple PHP Application Framework.
  * Copyright (C) 2010-2020 Phoinex Scholars Co. (http://dpq.co.ir)
@@ -27,16 +27,11 @@ Pluf::loadFunction('SuperTenant_Shortcuts_GetTenantFeildProperties');
 class SuperTms_TestRun extends TMS_TestRun
 {
 
-    /**
-     *
-     * @see TMS_TestRun::init()
-     */
     function init()
     {
         parent::init();
         $this->_a['multitenant'] = false;
-        Pluf::loadFunction('SuperTms_Shortcuts_GetTenantFeildProperties');
-        $tenatFeild = SuperTms_Shortcuts_GetTenantFeildProperties();
+        $tenatFeild = SuperTms_Shortcuts::getTenantFeildProperties();
         $this->_a['cols'] = array_merge($this->_a['cols'], $tenatFeild);
     }
 }

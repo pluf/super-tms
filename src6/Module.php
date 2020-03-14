@@ -16,6 +16,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-    
-return array(
-);
+namespace Pluf\SuperTms;
+
+use Pluf;
+
+class Module extends \Pluf\Module
+{
+
+    const moduleJsonPath = __DIR__ . '/module.json';
+
+    const relations = array();
+
+    public function init(Pluf $bootstrap): void
+    {}
+}
+

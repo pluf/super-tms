@@ -11,8 +11,6 @@ $cfg['debug'] = true;
 $cfg['installed_apps'] = array(
     'Pluf',
     'User',
-    'Role',
-    'Group',
     'Monitor',
     'Tenant',
     'SuperTms'

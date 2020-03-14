@@ -16,9 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-use PHPUnit\Framework\TestCase;
-use PHPUnit\Framework\IncompleteTestError;
-require_once 'Pluf.php';
+use Pluf\Test\TestCase;
 
 /**
  * It is a basic class for tests which includes common processes for unit tests.
@@ -26,8 +24,6 @@ require_once 'Pluf.php';
  * credential for this account (with password 'test').
  * It also includes uninstall process after finishint tests.
  * 
- * @backupGlobals disabled
- * @backupStaticAttributes disabled
  */
 abstract class AbstractBasicTest extends TestCase
 {
