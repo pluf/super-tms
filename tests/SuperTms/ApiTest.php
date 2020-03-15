@@ -16,18 +16,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-use PHPUnit\Framework\TestCase;
+use Pluf\Test\TestCase;
 
-require_once 'Pluf.php';
-
-/**
- * @backupGlobals disabled
- * @backupStaticAttributes disabled
- */
 class SuperTms_Api extends TestCase
 {
 
     /**
+     *
      * @before
      */
     public function setUpTest()
@@ -36,6 +31,7 @@ class SuperTms_Api extends TestCase
     }
 
     /**
+     *
      * @test
      */
     public function testClassInstance()
