@@ -7,7 +7,7 @@ class SuperTms_Shortcuts
     {
         return array(
             'tenant' => array(
-                'type' => 'Pluf_DB_Field_Foreignkey',
+                'type' => 'Foreignkey',
                 'model' => 'Pluf_Tenant',
                 'is_null' => false,
                 'editable' => false,
